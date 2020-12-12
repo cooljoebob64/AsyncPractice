@@ -1,8 +1,8 @@
 function printCityCoords(cityRequest) {
   findACity(cityRequest).then((res) => {
-
-    console.log(`Coords of ${cityRequest} = Lat: ${res.latt}, Long: ${res.longt}`);
-
+    console.log(
+      `Coords of ${cityRequest} = Lat: ${res.latt}, Long: ${res.longt}`
+    );
   });
 }
 
@@ -21,7 +21,6 @@ async function findACity(cityName) {
 async function getCityInfo(cityName) {
   url = `https://geocode.xyz/${cityName}?json=1`;
 
-  
   let res = await fetch(url);
 
   if (res.status != 200) {
